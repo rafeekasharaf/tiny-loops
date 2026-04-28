@@ -1,0 +1,151 @@
+.nav {
+  background: rgba(255, 248, 242, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0 40px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--blush);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--deep);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+
+.link {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--mid);
+  letter-spacing: 0.02em;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.link:hover,
+.link.active {
+  background: var(--blush-light);
+  color: var(--rose);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  transition: background var(--transition), transform var(--transition);
+  position: relative;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  background: var(--rose-dark);
+  transform: translateY(-1px);
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--deep);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.cartLabel {
+  font-size: 13px;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--deep);
+  cursor: pointer;
+  padding: 6px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1.5px solid var(--blush);
+    gap: 4px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .link {
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  .cartLabel {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}

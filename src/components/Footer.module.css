@@ -1,0 +1,87 @@
+.footer { background: var(--deep); color: #d4c4b8; margin-top: auto; }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 56px 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tagline { font-size: 14px; opacity: 0.65; margin-bottom: 18px; }
+
+.social { display: flex; gap: 14px; }
+
+.socialLink {
+  font-size: 13px;
+  color: #d4c4b8;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity var(--transition);
+}
+
+.socialLink:hover { opacity: 1; }
+
+.links { display: flex; gap: 48px; }
+
+.linkGroup { display: flex; flex-direction: column; gap: 10px; }
+
+.linkTitle {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 4px;
+}
+
+.linkGroup button,
+.linkGroup a {
+  background: none;
+  border: none;
+  color: #d4c4b8;
+  opacity: 0.72;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-align: left;
+  text-decoration: none;
+  padding: 0;
+  transition: opacity var(--transition);
+}
+
+.linkGroup button:hover,
+.linkGroup a:hover { opacity: 1; }
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 18px 60px;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bottom p { font-size: 12px; opacity: 0.45; }
+
+.seo { font-size: 11px !important; }
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; padding: 40px 28px 32px; gap: 32px; }
+  .bottom { padding: 16px 28px; flex-direction: column; align-items: flex-start; }
+}
