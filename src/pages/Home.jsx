@@ -44,17 +44,15 @@ export default function Home({ onNavigate }) {
       {/* Trust bar */}
       <div className={styles.trustBar}>
         {[
-          { icon: '📦', label: 'Safe Packaging', sub: 'Wrapped with care' },
-          { icon: '✉️', label: 'Custom Orders', sub: 'Your design, my yarn' },
-          { icon: '💌', label: 'Gift Ready', sub: 'Free gift note included' },
-          { icon: '🌟', label: '100% Handmade', sub: 'Never mass produced' },
+          { icon: '📦', label: 'Safe Packaging', sub: 'Wrapped with care', color: styles.card1 },
+          { icon: '✉️', label: 'Custom Orders', sub: 'Your design, my yarn', color: styles.card2 },
+          { icon: '💌', label: 'Gift Ready', sub: 'Free gift note included', color: styles.card3 },
+          { icon: '🌟', label: '100% Handmade', sub: 'Never mass produced', color: styles.card4 },
         ].map(t => (
-          <div key={t.label} className={styles.trustItem}>
+          <div key={t.label} className={`${styles.trustCard} ${t.color}`}>
             <div className={styles.trustIcon}>{t.icon}</div>
-            <div>
-              <div className={styles.trustLabel}>{t.label}</div>
-              <div className={styles.trustSub}>{t.sub}</div>
-            </div>
+            <div className={styles.trustLabel}>{t.label}</div>
+            <div className={styles.trustSub}>{t.sub}</div>
           </div>
         ))}
       </div>
