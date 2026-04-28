@@ -21,8 +21,8 @@ export default function ProductModal({ product, onClose }) {
       <div className={styles.modal} role="dialog" aria-modal="true" aria-label={product.name}>
         <button className={styles.close} onClick={onClose} aria-label="Close">✕</button>
 
-        <div className={styles.imgSection} style={{ background: product.bg }}>
-          <span className={styles.emoji}>{product.emoji}</span>
+        <div className={styles.imgSection}>
+          <img src={product.image} alt={product.name} className={styles.productImg} />
         </div>
 
         <div className={styles.content}>

@@ -16,8 +16,19 @@ export default function ProductCard({ product, onClick }) {
 
   return (
     <article className={styles.card} onClick={() => onClick(product)}>
-      <div className={styles.imgWrap} style={{ background: product.bg }}>
+      {/* <div className={styles.imgWrap} style={{ background: product.bg }}>
         <span className={styles.emoji}>{product.emoji}</span>
+        <span
+          className={styles.tag}
+          style={{ color: product.tagColor, borderColor: product.tagColor + '44', background: product.tagColor + '18' }}
+        >
+          {product.tag}
+        </span>
+        {!product.inStock && <div className={styles.outOfStock}>Out of Stock</div>}
+      </div> */}
+
+      <div className={styles.imgWrap}>
+        <img src={product.image} alt={product.name} className={styles.productImg} />
         <span
           className={styles.tag}
           style={{ color: product.tagColor, borderColor: product.tagColor + '44', background: product.tagColor + '18' }}
@@ -33,7 +44,7 @@ export default function ProductCard({ product, onClick }) {
           <p className={styles.details}>{product.details}</p>
         </div>
         <div className={styles.footer}>
-          <span className={styles.price}>${product.price}</span>
+          <span className={styles.price}>₹{product.price}</span>
           <button
             className={`${styles.addBtn} ${added ? styles.added : ''} ${!product.inStock ? styles.disabled : ''}`}
             onClick={handleAdd}
